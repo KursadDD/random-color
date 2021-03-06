@@ -31,7 +31,6 @@ function changeColors() {
 
   document.querySelector("body").style.backgroundColor =
     colors[randomIndex].name;
-  console.log("random", randomIndex);
 }
 
 //2)Kullanıcının girdiği string'i renk listesine eklemek ve
@@ -44,17 +43,15 @@ function addColor() {
     motto: colorData[1],
   };
 
-
-  if (colors.findIndex((color)=>color.name === colorObject.name) === -1) {
+  if (colors.findIndex((color) => color.name === colorObject.name) === -1) {
     document.querySelector("body").style.backgroundColor = colorObject.name;
     document.querySelector("#colorName").textContent = colorObject.name;
     document.querySelector("#colorDesc").textContent = colorObject.motto;
 
     colors.push(colorObject);
-    userInput.value="";
+    userInput.value = "";
     userInput.focus();
-    console.log("ifdeyim")
-  }else{
+  } else {
     alert("Renk zaten mevcut");
   }
 }
